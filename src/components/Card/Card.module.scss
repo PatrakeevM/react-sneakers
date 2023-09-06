@@ -1,0 +1,53 @@
+$main: #e7f6ff;
+$white: #fff;
+$border: #eaeaea;
+$dashed: #dfdfdf;
+
+// Fonts
+$font-main: "Inter", sans-serif;
+
+.card {
+  padding: 30px;
+  margin-right: 40px;
+  width: 210px;
+  border-radius: 40px;
+  border: 1px solid $border;
+  background: $white;
+  transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;
+
+  &:hover {
+    box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+  }
+
+  .favorite {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  h5 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  span {
+    text-transform: uppercase;
+    font-size: 11px;
+    opacity: 0.5;
+  }
+
+  b {
+    font-size: 14px;
+  }
+
+  .plusBtn {
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

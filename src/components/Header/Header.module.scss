@@ -1,0 +1,25 @@
+// Colors
+$main: #e7f6ff;
+$white: #fff;
+$border: #eaeaea;
+$dashed: #dfdfdf;
+
+// Fonts
+$font-main: "Inter", sans-serif;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-bottom: 1px solid $border;
+
+  img {
+    margin-right: 15px;
+  }
+
+  h3,
+  p {
+    margin: 0;
+  }
+}
