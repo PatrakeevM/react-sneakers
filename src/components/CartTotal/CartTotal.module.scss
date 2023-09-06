@@ -1,0 +1,60 @@
+// Colors
+$main: #e7f6ff;
+$white: #fff;
+$border: #eaeaea;
+$dashed: #dfdfdf;
+
+// Fonts
+$font-main: "Inter", sans-serif;
+
+.cartTotal {
+  ul {
+    margin-bottom: 24px !important;
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+
+    div {
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed $dashed;
+      position: relative;
+      top: -4px;
+      margin: 0 8px;
+    }
+  }
+
+  .btnArrow {
+    position: relative;
+    width: 100%;
+    padding: 18px;
+    border-radius: 18px;
+    background: #9dd458;
+    color: $white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.15s ease-in;
+    cursor: pointer;
+
+    &:active {
+      background: darken(#9dd458, 10%);
+    }
+
+    &:hover {
+      img {
+        transform: translateX(5px);
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 30px;
+      top: 22px;
+      transition: transform 0.2s ease-in;
+    }
+  }
+}

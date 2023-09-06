@@ -23,117 +23,6 @@ body {
   display: none !important;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.cart {
-  width: 400px;
-  height: 100%;
-  right: 0;
-  background: #fff;
-  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-
-  h2 {
-    font-size: 24px;
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-  }
-}
-
-.items {
-  overflow: auto;
-  margin-bottom: 40px;
-
-  .cartItem {
-    border-radius: 20px;
-    border: 1px solid $border;
-    overflow: hidden;
-    padding: 20px;
-
-    p {
-      font-size: 14px;
-    }
-
-    b {
-      font-size: 14px;
-    }
-
-    .removeBtn {
-      opacity: 0.5;
-      transition: opacity 0.2s ease-in;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-.cartTotal {
-  ul {
-    margin-bottom: 24px !important;
-
-    li {
-      display: flex;
-      align-items: flex-end;
-      margin-bottom: 20px;
-    }
-
-    div {
-      flex: 1;
-      height: 1px;
-      border-bottom: 1px dashed $dashed;
-      position: relative;
-      top: -4px;
-      margin: 0 8px;
-    }
-  }
-
-  .btnArrow {
-    position: relative;
-
-    &:hover {
-      img {
-        transform: translateX(5px);
-      }
-    }
-
-    img {
-      position: absolute;
-      right: 30px;
-      top: 22px;
-      transition: transform 0.2s ease-in;
-    }
-  }
-}
-
-.btnArrow {
-  width: 100%;
-  padding: 18px;
-  border-radius: 18px;
-  background: #9dd458;
-  color: $white;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  transition: background 0.15s ease-in;
-  cursor: pointer;
-
-  &:active {
-    background: darken(#9dd458, 10%);
-  }
-}
-
 .container {
   border-radius: 20px;
   background: $white;
@@ -143,68 +32,10 @@ body {
   max-width: 1110px;
 }
 
-header {
-  border-bottom: 1px solid $border;
-
-  img {
-    margin-right: 15px;
-  }
-
-  h3,
-  p {
-    margin: 0;
-  }
-}
-
 .content {
   h1 {
     margin: 0;
   }
-}
-
-.card {
-  padding: 30px;
-  width: 210px;
-  border-radius: 40px;
-  border: 1px solid $border;
-  background: $white;
-  transition: box-shadow 0.2s ease-in, transform 0.2s ease-in;
-
-  h5 {
-    margin: 0;
-    font-size: 13px;
-    font-weight: 400;
-  }
-
-  span {
-    text-transform: uppercase;
-    font-size: 11px;
-    opacity: 0.5;
-  }
-
-  b {
-    font-size: 14px;
-  }
-
-  .plusBtn {
-    opacity: 0.5;
-    transition: opacity 0.2s ease-in;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &:hover {
-    box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.05);
-    transform: translateY(-5px);
-  }
-}
-
-.favorite {
-  position: absolute;
-  cursor: pointer;
 }
 
 .button {
@@ -218,7 +49,8 @@ header {
   cursor: pointer;
 }
 
-.search-wrapper {
+.searchWrapper {
+  display: flex;
   border-radius: 10px;
   border: 1px solid $border;
   width: 245px;
