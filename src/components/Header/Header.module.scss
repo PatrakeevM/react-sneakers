@@ -1,11 +1,4 @@
-// Colors
-$main: #e7f6ff;
-$white: #fff;
-$border: #eaeaea;
-$dashed: #dfdfdf;
-
-// Fonts
-$font-main: "Inter", sans-serif;
+@import "/src/index.scss";
 
 .header {
   display: flex;

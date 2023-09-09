@@ -1,14 +1,9 @@
-$main: #e7f6ff;
-$white: #fff;
-$border: #eaeaea;
-$dashed: #dfdfdf;
-
-// Fonts
-$font-main: "Inter", sans-serif;
+@import "/src/index.scss";
 
 .card {
   padding: 30px;
   margin-right: 40px;
+  margin-bottom: 40px;
   width: 210px;
   border-radius: 40px;
   border: 1px solid $border;
@@ -42,12 +37,6 @@ $font-main: "Inter", sans-serif;
   }
 
   .plusBtn {
-    opacity: 0.5;
-    transition: opacity 0.2s ease-in;
     cursor: pointer;
-
-    &:hover {
-      opacity: 1;
-    }
   }
 }
