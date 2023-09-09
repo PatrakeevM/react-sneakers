@@ -1,40 +1,37 @@
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 import Card from "./components/Card";
-
-const arr = [
-  {
-    title: "Мужские Кроссовки Nike Blazer Mid Suede",
-    price: 12999,
-    imageUrl: "/img/sneakers/1.jpg",
-    id: 0,
-  },
-  {
-    title: "Мужские Кроссовки Nike Air Max 270",
-    price: 9999,
-    imageUrl: "/img/sneakers/2.jpg",
-    id: 1,
-  },
-  {
-    title: "Мужские Кроссовки Nike Blazer Mid Suede",
-    price: 8499,
-    imageUrl: "/img/sneakers/3.jpg",
-    id: 2,
-  },
-  {
-    title: "Кроссовки Puma X Aka Boku Future Rider",
-    price: 8999,
-    imageUrl: "/img/sneakers/4.jpg",
-    id: 3,
-  },
-];
+import { useEffect, useState } from "react";
 
 function App() {
+  const [items, setItems] = useState([]);
+  const [cartItems, setcartItems] = useState([]);
+  const [cartOpened, setCartOpened] = useState(false);
+
+  useEffect(() => {
+    fetch("https://64f9a4064098a7f2fc14c0b0.mockapi.io/items")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json);
+      });
+  }, []);
+
+  const onAddToCart = (obj) => {
+    setcartItems((prev) => [...prev, obj]);
+  };
+
   return (
     <>
       <div className="container clear">
-        <Cart />
-        <Header />
+        {cartOpened && (
+          <Cart
+            items={cartItems}
+            onClose={() => setCartOpened(false)}
+          />
+        )}
+        <Header onClickCart={() => setCartOpened(true)} />
         <div className="content p-40">
           <div className="d-flex align-center justify-between mb-40">
             <h1>Все кроссовки</h1>
@@ -44,14 +41,15 @@ function App() {
             </div>
           </div>
 
-          <div className="d-flex">
-            {arr.map((obj) => (
+          <div className="d-flex flex-wrap">
+            {items.map((item) => (
               <Card
-                imageUrl={obj.imageUrl}
-                title={obj.title}
-                price={obj.price}
-                id={obj.id}
-                onClick={() => alert(obj.price)}
+                imageUrl={item.imageUrl}
+                title={item.title}
+                price={item.price}
+                id={item.id}
+                onFavorite={() => alert("Добавленно в избранное")}
+                onPlus={(obj) => onAddToCart(obj)}
               />
             ))}
           </div>
